@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build test",
+      "type": "shell",
+      "command": "g++",
+      "args": ["-g", "-o", "main", "main.cpp","BMP.cpp","FSHS.cpp","HistogramShaping.cpp","Lianma.cpp","Fourier.cpp"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

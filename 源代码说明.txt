@@ -1,0 +1,26 @@
+王昱入  信息与电子学院  3120190813
+————————————————
+具体的算法和结果介绍详见另一个文件。
+整个小工程中BMP读取用到了windows.h。
+算法结果没在里面，可以编译然后运行以下main.exe跑一遍。
+g++ -g -o main main.cpp BMP.cpp FSHS.cpp HistogramShaping.cpp Lianma.cpp Fourier.cpp
+————————————————————————
+1、所有图像处理函数仅处理24为bmp，如想要更改图像可以修改main.cpp
+2、我自己写的傅里叶变换算法效率较低（没有使用fft以及利用硬件资源），因此处理速度非常慢，此处建议使用100*100像素及以下的图像。
+——————————————————————————————————————————————————————————
+主要源文件共8个，分别是main.cpp，BMP.h，BMP.cpp，ImageProcess.h，FSHS.cpp，HistogramShaping.cpp，Lianma.cpp，Foruirer.cpp以及3个测试用的BMP。
+接下来简要介绍八个文件中的内容：
+1、main.cpp
+主要是调用其他文件中写的类和函数。
+2、BMP.h及BMP.cpp
+在这里面将bmp格式打包为一个类，写了关于bmp格式图像的读取和存储方法。
+3、ImageProcess.h
+在此处对其他具体的图像处理函数进行声明。由于仅写了最常见的情况的原因，所有的图像处理函数只能处理24位真彩的bmp。
+4、FSHS.cpp
+实现了FSHS_Gray（黑白图像FSHS，并没有啥用，和彩色差不多）和FSHS。
+5、HistogramShaping.cpp
+实现了直方图均衡化和直方图规定化。Shaping的形状在main.cpp里面。
+6、Lianma.cpp
+实现了编写链码。
+7、Fourier.cpp
+实现了频域滤波。0-1低通滤波器被我直接和二维傅里叶变换写在了一起。
